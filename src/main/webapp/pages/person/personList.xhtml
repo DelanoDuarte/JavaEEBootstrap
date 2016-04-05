@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" template="/template/template.xhtml">
+
+	<ui:define name="content">
+
+		<p:panel header="Person List">
+			<p:dataTable id="tablePersons"
+				value="#{personController.retrieveAllPersons()}" var="_person">
+
+				<p:column>
+					<f:facet name="header">Name</f:facet>
+					<p:outputLabel value="#{_person.name}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Surname</f:facet>
+					<p:outputLabel value="#{_person.surname}" />
+				</p:column>
+
+			</p:dataTable>
+		</p:panel>
+		<h:form>
+			<h:link styleClass="btn btn-primary btn-lg"
+				outcome="/pages/person/personEdit.xhtml" value="New Person" />
+		</h:form>
+	</ui:define>
+</ui:composition>

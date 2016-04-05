@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<h:outputStylesheet name="/webjars/bootstrap/3.2.0/css/bootstrap.css" />
+	<h:outputStylesheet
+		name="/webjars/bootstrap/3.2.0/css/bootstraptheme.css" />
+
+	<style>
+body {
+	padding-top: 60px;
+}
+</style>
+
+</h:head>
+<h:body>
+
+	<div class="navbar navbar-inverse navbar-fixed-top” role=“navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<h:link outcome="/index" class="navbar-brand" value="Home" />
+				<h:link outcome="pages/skill/skillEdit.xhtml" class="navbar-brand"
+					value="Skill" />
+				<h:link outcome="pages/person/personEdit.xhtml" class="navbar-brand"
+					value="Person" />
+			</div>
+			<div class="collapsenavbar-collapse">
+				<ul class="navnavbar-nav">
+					<!-- 					<li><h:link outcome="/views/setup" value="Theatre setup" /></li> -->
+					<!-- 					<li><h:link outcome="/views/book" value="Book tickets" /></li> -->
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<ui:insert name="content">
+
+		</ui:insert>
+		<hr />
+		<footer>
+		<p class="text-muted">&copy; Company 2016</p>
+		</footer>
+	</div>
+
+
+</h:body>
+</html>

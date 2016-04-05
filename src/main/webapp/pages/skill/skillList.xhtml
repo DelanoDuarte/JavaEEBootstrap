@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" template="/template/template.xhtml">
+
+	<ui:define name="content">
+
+		<p:panel header="Skill List">
+			<p:dataTable id="tableSkills"
+				value="#{skillController.retrieveAllSkills()}" var="_skill">
+
+				<p:column>
+					<f:facet name="header">Skill</f:facet>
+					<p:outputLabel value="#{_skill.name}" />
+				</p:column>
+
+			</p:dataTable>
+		</p:panel>
+		<h:form>
+			<h:link styleClass="btn btn-primary btn-lg"
+				outcome="/pages/skill/skillEdit.xhtml" value="New Skill" />
+		</h:form>
+	</ui:define>
+</ui:composition>
